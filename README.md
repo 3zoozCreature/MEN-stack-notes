@@ -32,3 +32,15 @@ app.listen(3000, () => {
   ```
 
 Run the server with `nodemon server.js`
+
+Navigate to `http://localhost:3000` to view our server.
+
+Use `Ctrl + c` to stop the server in the terminal.
+
+## Creating a Test route
+
+```js
+app.get('/test', (req, res) => {
+    res.send('<h1>This is a test</h1>')
+})
+```
