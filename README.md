@@ -44,3 +44,15 @@ app.get('/test', (req, res) => {
     res.send('<h1>This is a test</h1>')
 })
 ```
+
+### Using request paramenters
+
+```js
+app.get('/greet/:name', (req, res) => {
+  res.send(`Hello, ${req.params.name}`);
+  console.log(req.params)
+});
+```
+
+Navigate to `http//localhost:300/greet/name`
+
