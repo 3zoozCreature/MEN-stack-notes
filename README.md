@@ -115,3 +115,19 @@ To display JavaScript values from an EJS file, you need an output tag:
 <%= user %>
 ```
 
+home.ejs
+```ejs
+    <title>
+        <%= title %>
+    </title>
+```
+
+## Using `forEach` in `ejs`
+
+```ejs
+<ul>
+  <% inventory.forEach((item) => { %>
+      <li><%= item.name %>: <%= item.qty %></li>
+    <% }); %>
+</ul>
+```
