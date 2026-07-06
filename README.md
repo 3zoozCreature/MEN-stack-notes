@@ -67,3 +67,36 @@ app.get('/greet/:name', (req, res) => {
 
 Navigate to `http//localhost:300/greet/name`
 
+## Rendering EJS
+
+-install EJS with `npm i ejs`
+-Create a views directory with `mkdir views`
+-create an EJS file with `touch home.ejs`
+-add HTML boilerplate with `!`
+
+home.ejs
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+</head>
+<body>
+  <h1>We are rendering an EJS page!</h1>
+</body>
+</html>
+
+```
+
+-Render EJS page using a controller like this one:
+
+```js
+app.get('/', (req, res) => {
+    res.render('home.ejs')
+})
+```
+
+
+<img width="845" height="576" alt="image" src="https://github.com/user-attachments/assets/aebb6937-bf9a-43dd-90e5-f05f01608679" />
