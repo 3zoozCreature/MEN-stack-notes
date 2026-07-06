@@ -100,3 +100,18 @@ app.get('/', (req, res) => {
 
 
 <img width="845" height="576" alt="image" src="https://github.com/user-attachments/assets/aebb6937-bf9a-43dd-90e5-f05f01608679" />
+
+### EJS Syntax
+
+To use JavaScript in an EJS file, you need a scriplet tag:
+
+```ejs
+<% let user = Aziz %>
+```
+
+To display JavaScript values from an EJS file, you need an output tag: 
+
+```ejs
+<%= user %>
+```
+
