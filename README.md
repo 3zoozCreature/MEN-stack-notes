@@ -140,3 +140,59 @@ home.ejs
 <a href="<%=item.id %>"> <%= item.name %> </a>
 ```
 We should see the URl change in the browser.
+
+### Reusable Nav bar with partials
+
+-Create a folder called `partials` inside of `views`
+-Create a file called `nav.ejs` inside of `partials`
+
+should include the opening `html`, `head`, and `body` tags:
+
+```ejs
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+    </nav>
+
+```
+
+Indlude the `nav` in other files with this statement: 
+
+```ejs
+<%- include('./partials/nav') %>
+```
+### Adding CSS & images with `public`
+
+-Create a folder called `public`
+-Create a folder called `stylesheets` inside of `public`
+-Create a file called `style.css` inside of `stylesheets`
+
+Configure our server to look inside of the `public` folder for static files:
+
+```js
+//require the path from node at the top
+const path = require('path')
+
+//use static middleware with other middleware like morgan
+app.use(express.static(path.join(__dirname, "public")))
+```
+
+- Link the stylesheet in the head of our `html` files (inside `nav` partial if we're using partials)
+
+```ejs
+<link rel="stylesheet" href="/stylesheets/style.css">
+```
+
+### Images
+
+- Create an `images` folder inside of our `public` folder
+- Link to images like normal: `    <img src="images\pexels-maryia-babuchenka-1765269573-36967061.jpg" alt="">
+`
